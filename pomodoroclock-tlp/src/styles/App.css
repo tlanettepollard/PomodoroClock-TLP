@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Open+Sans&display=swap');
+
+/* Variables */
+:root {
+  --ft-family-text: "Open Sans", sans-serif;
+  --ft-family-heading: 'Caveat Brush', cursive;
+  --color-candy-orange: hsl(19.06, 100%, 50%);
+  --color-sunkist-orange: hsl(30.35, 100%, 50%);
+  --color-light-orange: hsl(40, 100%, 50%);
+  --color-medium-blue-green: hsl(191.03, 100%, 17.06%);
+  --color-dark-blue-green: hsl(191.3, 100%, 13.53%);
+  --color-light-black: hsl(0, 0%, 13.33%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --shadow: rgba(0, 0, 0, .4);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ft-family-text);
+}
+
+body {
+  font-family: inherit;
+}
+
+
+
+.App {
+  text-align: center;
+}
+
