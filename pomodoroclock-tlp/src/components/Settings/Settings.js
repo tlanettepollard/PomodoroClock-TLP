@@ -35,7 +35,11 @@ export default class Settings extends Component {
                 </div>
                 <div className="settings-section">
                     <label id="break-label">Break Length</label>
-                    
+                    <div>
+                        <button className="btn-setting" onClick={this.handleBreakIncrement}>+</button>
+                        <span id="break-length">{this.props.breakTime}</span>
+                        <button className="btn-setting" onClick={this.handleBreakDecrement}>-</button>
+                    </div>
                 </div>  
             </div>
         
