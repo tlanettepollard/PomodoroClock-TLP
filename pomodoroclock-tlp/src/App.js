@@ -17,10 +17,21 @@ export default class App extends Component {
         </div>
         <div className="controller-container">
           /WORK/
+          <div>
+            <button>+</button>
+            <span> /BREAKTIME/ </span>
+            <button>-</button>
+          </div>
           /BREAK/
+          <div>
+            <button>+</button>
+            <span> /WORKTIME/ </span>
+            <button>-</button>
+          </div>
         </div>
         <div className="sound-container">
           /SOUND/
+          <button>/SOUND ICON/</button>
         </div>
         <div className="footer">
           <h3 className="footer-attribute">

@@ -63,6 +63,12 @@ body {
   align-items: center;
 }
 
+.app-title {
+  font-family: var(--ft-family-heading);
+  font-size: 46px;
+  padding: 20px;
+}
+
 
 
 /* Timer */ 
@@ -85,6 +91,12 @@ body {
   width: 80%;
 }
 
+/* Sound */
+
+.sound-container {
+  margin-top: 50px;
+}
+
 /* Footer */
 .footer {
   position: fixed;
@@ -94,5 +106,9 @@ body {
   margin-top: 50px;
   height: 50px;
   text-align: center;
+}
 
+h3 {
+  font-size: var(--ft-family-text);
+  font-size: 16px;
 }
