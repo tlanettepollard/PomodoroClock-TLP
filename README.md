@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
 
 
 <Sound setSound={this.setSound} sound={this.state.sound}/>
+=======
+>>>>>>> 1339e89fab14d4c75e8009ab50d98b43e70ec113
 
+<audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
