@@ -12,18 +12,23 @@ export default class App extends Component {
         <div className="header-container">
           <h1 className="app-title">Rebel-Cow Pomodoro Clock</h1>
         </div>
+
         <div className="timer-container">
-          /TIMER/
-        </div>
-        <div className="controller-container">
-          /WORK/
           <div>
+            /TIMER/
+          </div>
+        </div>
+
+        <div className="controller-container">
+          <div className="session-container">
+            /WORK/
             <button>+</button>
             <span> /BREAKTIME/ </span>
             <button>-</button>
           </div>
-          /BREAK/
-          <div>
+          
+          <div className="break-container">
+            /BREAK/
             <button>+</button>
             <span> /WORKTIME/ </span>
             <button>-</button>
