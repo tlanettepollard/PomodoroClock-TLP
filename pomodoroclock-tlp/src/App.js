@@ -3,22 +3,50 @@ import '../src/styles/App.css';
 
 //import Timer from './components/Timer/Timer';
 //import Controllers from './components/Controllers/Controllers';
-import Sound from './components/Sound/Sound';
+//import Sound from './components/Sound/Sound';
 export default class App extends Component {
+
   render() {
     return (
       <div className="container">
-        <div className="header">
-          <h1 className="appTitle">Rebel-Cow Pomodoro Clock</h1>
+        <div className="header-container">
+          <h1 className="app-title">Rebel-Cow Pomodoro Clock</h1>
         </div>
-        <Sound setSound={this.setSound} sound={this.state.sound}/>
+
+        <div className="timer-container">
+          <div>
+            /TIMER/
+          </div>
+        </div>
+
+        <div className="controller-container">
+          <div className="session-container">
+            /WORK/
+            <button>+</button>
+            <span> /BREAKTIME/ </span>
+            <button>-</button>
+          </div>
+          
+          <div className="break-container">
+            /BREAK/
+            <button>+</button>
+            <span> /WORKTIME/ </span>
+            <button>-</button>
+          </div>
+        </div>
+        <div className="sound-container">
+          /SOUND/
+          <button>/SOUND ICON/</button>
+        </div>
         <div className="footer">
-          <h4 className="footer-attribute">
-            React JS Pomodoro Clock App created by {" "} <a href="https://github.com/TLanetteRose">{" "} <span> T.Lanette Pollard </span></a> &nbsp;
+          <h3 className="footer-attribute">
+            React JS Pomodoro Clock App created by {" "} <a href="https://github.com/TLanetteRose"> {" "} <span> T.Lanette Pollard </span></a> &nbsp;
             FreeCodeCamp Front End Libraries Project
-          </h4>
+          </h3>
         </div>
       </div>
-    );
+    )
   }
 }
+
+  
