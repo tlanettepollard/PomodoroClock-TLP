@@ -8,10 +8,8 @@ export default class Sound extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.toggleSound}>Sound
-                <audio id="beep" preload="auto"
-                src="https://goo.gl/65cBl1"
-                ref={this.audioBeep}></audio>
+                <button onClick={this.toggleSound}>
+                Sound
                 </button>
             </div>
         )
