@@ -3,6 +3,7 @@ import '../src/styles/App.css';
 
 import Settings from './components/Settings/Settings';
 import Timer from './components/Timer/Timer';
+import TimerControllers from './components/Controllers/TimeControllers';
 
 
 export default class App extends Component {
@@ -37,19 +38,14 @@ export default class App extends Component {
         </div>
 
         <div className="controller-container">
-          <div className="session-container">
-            /WORKCONTROLLER/
-            <button>+</button>
-            <span> /BREAKTIME/ </span>
-            <button>-</button>
-          </div>
-
-          <div className="break-container">
-            /BREAKCONTROLLER/
-            <button>+</button>
-            <span> /WORKTIME/ </span>
-            <button>-</button>
-          </div>
+          <TimerControllers 
+            workTime={this.state.workTime}
+            breakTime={this.state.breakTime}
+            incrementWorkTime={this.incrementWorkTime}
+            decrementWorkTime={this.decrementWorkTime}
+            incrementBreakTime={this.incrementBreakTime}
+            decrementBreakTime={this.decrementBreakTime}
+            />
         </div>
         <div className="sound-container">
           /SOUND/
