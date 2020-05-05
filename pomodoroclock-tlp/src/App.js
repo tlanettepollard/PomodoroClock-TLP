@@ -4,6 +4,7 @@ import '../src/styles/App.css';
 import Settings from './components/Settings/Settings';
 import Timer from './components/Timer/Timer';
 import TimerControllers from './components/Controllers/TimeControllers';
+import Sound from './components/Sound/Sound';
 
 
 export default class App extends Component {
@@ -45,8 +46,8 @@ export default class App extends Component {
             />
         </div>
         <div className="sound-container">
-          /SOUND/
-          <button>/SOUND ICON/</button>
+         <Sound setSound={this.setSound} sound={this.state.sound} />
+         
         </div>
         <div className="footer">
           <h3 className="footer-attribute">
