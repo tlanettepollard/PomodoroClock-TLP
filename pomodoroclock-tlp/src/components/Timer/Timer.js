@@ -16,7 +16,7 @@ export default class Timer extends Component {
 
     render() {
         return (
-            <div className="timer">
+            <div className="timer-section">
                 <label id="timer-label" className="count-down">{this.props.timeLabel}</label>
                 <span id="time-left" onClick={this.timer}>{this.props.currentTime}</span>
                 <span>{this.props.cycle}</span>

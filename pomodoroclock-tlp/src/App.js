@@ -31,10 +31,7 @@ export default class App extends Component {
         </div>
 
         <div className="timer-container">
-          <div>
-            <span>/TIMER/</span>
-            <span>/CURRENT SESSION/</span>
-          </div>
+          <Timer />
         </div>
 
         <div className="controller-container">
