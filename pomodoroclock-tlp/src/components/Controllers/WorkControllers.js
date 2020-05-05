@@ -13,8 +13,8 @@ handleWorkDecrement = () => {
         const btnClassName = this.props.isStart ? 'disable' : '';
 
         return (
-            <div className="controller">
-                <div className="controller-section">
+            <div className="prod-container">
+                <div className="control-section">
                     <label id="session-label">Session Length</label>
                     <div>
                         <button className={btnClassName} id="session-increment" onClick={this.handleWorkIncrement}> + </button>

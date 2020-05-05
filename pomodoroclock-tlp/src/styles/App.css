@@ -22,6 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid black;
 }
 
 html {
@@ -87,23 +88,35 @@ body {
 
 .controller-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: row;
   border: 1px solid black;
   margin-top: 60px;
   height: 300px;
   width: 80%;
 }
 
-.session-container {
+.timer-controllers {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
-.break-container {
+.prod-container {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+}
+
+.control-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
+
+
 
 /* Sound */
 

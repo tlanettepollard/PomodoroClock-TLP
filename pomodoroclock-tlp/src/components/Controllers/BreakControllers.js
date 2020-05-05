@@ -14,12 +14,15 @@ export default class BreakController extends Component {
         const btnClassName = this.props.isStart ? 'disable' : '';
 
         return (
-            <div className="controller">
-                <div className="break-section">
+            <div className="prod-container">
+                <div className="control-section">
                     <label id="break-label">Break Length</label>
-                    <button className={btnClassName} id="break-increment" onClick={this.handleBreakIncrement}>+</button>
-                    <span id="break-length">{this.props.breakTime}</span>
-                    <button className={btnClassName} id="break-decrement" onClick={this.handleBreakDecrement}>-</button>
+                    <div>
+                        <button className=
+                        {btnClassName} id="break-increment" onClick={this.handleBreakIncrement}>+</button>
+                        <span id="break-length">{this.props.breakTime}</span>
+                        <button className={btnClassName} id="break-decrement" onClick={this.handleBreakDecrement}>-</button>
+                    </div>
                 </div>
             </div>
         )
