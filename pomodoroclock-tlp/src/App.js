@@ -1,10 +1,26 @@
 import React, {Component} from 'react';
 import '../src/styles/App.css';
 
-//import Timer from './components/Timer/Timer';
-//import Controllers from './components/Controllers/Controllers';
-//import Sound from './components/Sound/Sound';
+import Settings from './components/Settings/Settings';
+import Timer from './components/Timer/Timer';
+
+
 export default class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      timerId: 0,
+      timerRunning: false,
+      currentTime: "25 : 00",
+      cycle: "Session",
+      workTime: 25,
+      breakTime: 5,
+      sound: "on"
+    }
+
+  }
+
+
 
   render() {
     return (
@@ -15,20 +31,21 @@ export default class App extends Component {
 
         <div className="timer-container">
           <div>
-            /TIMER/
+            <span>/TIMER/</span>
+            <span>/CURRENT SESSION/</span>
           </div>
         </div>
 
         <div className="controller-container">
           <div className="session-container">
-            /WORK/
+            /WORKCONTROLLER/
             <button>+</button>
             <span> /BREAKTIME/ </span>
             <button>-</button>
           </div>
-          
+
           <div className="break-container">
-            /BREAK/
+            /BREAKCONTROLLER/
             <button>+</button>
             <span> /WORKTIME/ </span>
             <button>-</button>
@@ -40,12 +57,16 @@ export default class App extends Component {
         </div>
         <div className="footer">
           <h3 className="footer-attribute">
-            React JS Pomodoro Clock App created by {" "} <a href="https://github.com/TLanetteRose"> {" "} <span> T.Lanette Pollard </span></a> &nbsp;
-            FreeCodeCamp Front End Libraries Project
+            React JS Pomodoro Clock App created by{" "}
+            <a href="https://github.com/TLanetteRose">
+              {" "}
+              <span> T.Lanette Pollard </span>
+            </a>{" "}
+            &nbsp; FreeCodeCamp Front End Libraries Project
           </h3>
         </div>
       </div>
-    )
+    );
   }
 }
 
