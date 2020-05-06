@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import '../src/styles/App.css';
 
-//import Settings from './components/Settings/Settings';
+import Settings from './components/Settings/Settings';
 import Timer from './components/Timer/Timer';
-import TimerControllers from './components/Controllers/TimeControllers';
+import TimerControllers from './components/Controllers/Controllers';
 import Sound from './components/Sound/Sound';
 
 
@@ -67,6 +67,7 @@ export default class App extends Component {
 
         <div className="timer-container">
           <Timer />
+          <Settings className="settings-container"/>
         </div>
 
         <div className="controller-container">
