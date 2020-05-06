@@ -18,10 +18,12 @@ export default class Timer extends Component {
         return (
             <div className="timer">
                 <div className="timer-section">
-                    <label id="timer-label" className="count-down">{this.props.timeLabel}</label>
-                    <span id="time-left" onClick={this.timer}>{this.props.currentTime}</span>
+                    <label id="timer-label">
+                        Session
+                    </label>
+                    <span id="time-left" className="count-down" onClick={this.timer}>{this.props.currentTime}</span>
                     <span>{this.props.cycle}</span>
-             </div>
+                </div>
             </div>
         )
     }

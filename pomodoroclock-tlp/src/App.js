@@ -3,7 +3,7 @@ import '../src/styles/App.css';
 
 import Settings from './components/Settings/Settings';
 import Timer from './components/Timer/Timer';
-import TimerControllers from './components/Controllers/Controllers';
+import Controllers from './components/Controllers/Controllers';
 import Sound from './components/Sound/Sound';
 
 
@@ -20,6 +20,30 @@ export default class App extends Component {
       sound: "on"
     }
 
+  }
+
+  incrementWorkTime = () => {
+    this.setState({
+      workTime : this.state.workTime + 1
+    })
+  }
+
+  decrementWorkTime = () => {
+    this.setState({
+      workTime : this.state.workTime - 1 
+    })
+  }
+
+  incrementBreakTime = () => {
+    this.setState({
+      breakTime : this.state.breakTime + 1
+    })
+  }
+
+  decrementBreakTime = () => {
+    this.setState({
+      breakTime : this.state.breakTime - 1
+    })
   }
 
   startTimer = (duration) => {
@@ -67,11 +91,11 @@ export default class App extends Component {
 
         <div className="timer-container">
           <Timer />
-          <Settings className="settings-container"/>
+          <Controllers className="controllers-container"/>
         </div>
 
-        <div className="controller-container">
-          <TimerControllers 
+        <div className="settings-container">
+          <Settings 
             workTime={this.state.workTime}
             breakTime={this.state.breakTime}
             incrementWorkTime={this.incrementWorkTime}
