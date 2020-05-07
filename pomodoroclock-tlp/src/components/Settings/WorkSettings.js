@@ -16,16 +16,16 @@ handleWorkDecrement = () => {
 }
 
     render() {
-        //const btnClassName = this.props.isStart ? 'disable' : '';
+        const btnClassName = this.props.isStart ? 'disable' : '';
 
         return (
             <div className="settings">
                 <div className="settings-section">
                     <label id="session-label">Session Length</label>
                     <div>
-                        <button  id="session-increment" onClick={this.handleWorkIncrement}> + </button>
+                        <button className={btnClassName} id="session-increment" onClick={this.handleWorkIncrement}> + </button>
                         <span id="session-length">{this.props.workTime}</span>
-                        <button id="session-decrement" onClick={this.handleWorkDecrement}> - </button>
+                        <button className={btnClassName}id="session-decrement" onClick={this.handleWorkDecrement}> - </button>
                     </div>
                 </div>
             </div>
