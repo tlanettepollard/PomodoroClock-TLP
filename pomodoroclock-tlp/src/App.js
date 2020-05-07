@@ -100,7 +100,30 @@ export default class App extends Component {
    }
  }
 
-  
+ decreaseTimer() {
+   this.setState({
+     timeLeftInSecond: this.state.timeLeftInSecond - 1
+   });
+ }
+
+ phaseControl() {
+   if (this.state.timeLeftInSecond === 0) {
+     this.audioBeep.current.play();
+   } else if (this.state.timeLeftInSecond === -1) {
+     if (this.state.timeLabel === 'Session') {
+       this.setState({
+         timeLabel: 'Break',
+         timeLeftInSecond: this.state.breakLength * 60
+       });
+     } else {
+       this.setState({
+         timeLabel: 'Session',
+         timeLeftInSecond: this.state.sessionLength * 60
+       });
+     }
+   }
+ }
+
   /*startTimer = (duration) => {
     this.setState({timerRunning: true})
     let time = duration * 60

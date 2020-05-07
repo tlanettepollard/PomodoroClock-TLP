@@ -9,7 +9,7 @@ export default class Settings extends Component {
     render() {
     
         return ( 
-            <div className="timer-controllers" >
+            <div className="timer-controllers">
             <WorkSettings 
             sessionLength={this.state.sessionLength}
             isStart={this.state.isStart}
