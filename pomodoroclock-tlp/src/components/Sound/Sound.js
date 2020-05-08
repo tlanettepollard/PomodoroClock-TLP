@@ -10,6 +10,7 @@ export default class Sound extends Component {
             <div>
                 <button onClick={this.toggleSound}>
                 Sound
+                <i class="fa fa-volume-up fa-2x"/> 
                 </button>
             </div>
         )

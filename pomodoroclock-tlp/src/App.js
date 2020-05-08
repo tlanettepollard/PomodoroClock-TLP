@@ -1,28 +1,130 @@
 import React, {Component} from 'react';
 import '../src/styles/App.css';
 
-//import Settings from './components/Settings/Settings';
+import Settings from './components/Settings/Settings';
 import Timer from './components/Timer/Timer';
-import TimerControllers from './components/Controllers/TimeControllers';
+import Controllers from './components/Controllers/Controllers';
 import Sound from './components/Sound/Sound';
 
 
 export default class App extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props);
+    this.audioBeep = React.createRef();
+
     this.state = {
-      timerId: 0,
-      timerRunning: false,
-      currentTime: "25 : 00",
-      cycle: "Session",
-      workTime: 25,
-      breakTime: 5,
-      sound: "on"
+      breakLength: Number.parseInt(this.props.defaultBreakLength, 10),
+      sessionLength: Number.parseInt(this.props.defaultSessionLength, 10),
+      timeLabel: 'Session',
+      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
+      isStart: false,
+      timerInterval: null
     }
+    this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
+    this.onDecreaseBreak = this.onDecreaseBreak.bind(this);
+    this.onIncreaseSession = this.onIncreaseSession.bind(this);
+    this.onDecreaseSession = this.onDecreaseSession.bind(this);
+    this.onReset = this.onReset.bind(this);
+    this.onStartStop = this.onStartStop.bind(this);
+    this.decreaseTimer = this.decreaseTimer.bind(this);
+    this.phaseControl = this.phaseControl.bind(this);
 
   }
 
-  startTimer = (duration) => {
+  onIncreaseBreak() {
+    if (this.state.breakLength < 60 && !this.state.isStart) {
+      this.setState({
+        breakLength: this.state.breakLength + 1
+      });
+    }
+  }
+
+  onDecreaseBreak() {
+    if (this.state.breakLength > 1 && !this.state.isStart) {
+      this.setState({
+        breakLength: this.state.breakLength - 1
+      });
+    }
+  }
+
+  onIncreaseSession() {
+    if (this.state.sessionLength < 60 && !this.state.isStart) {
+      this.setState({
+        sessionLength: this.state.sessionLength + 1,
+        timeLeftInSecond: (this.state.sessionLength + 1) * 60
+      });
+    }
+  }
+
+  onDecreaseSession() {
+    if (this.state.sessionLength > 1 && !this.state.isStart) {
+      this.setState({
+        sessionLength: this.state.sessionLength - 1,
+        timeLeftInSecond: (this.state.sessionLength - 1) * 60,
+      });
+    }
+  }
+
+  onReset() {
+    this.setState({
+      breakLength: Number.parseInt(this.props.defaultBreakLength, 10),
+      sessionLength: Number.parseInt(this.props.defaultSessionLength, 10),
+      timeLabel: 'Session',
+      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
+      isStart: false,
+      timerInterval: null
+    });
+    this.audioBeep.current.pause();
+    this.audioBeep.current.currentTime = 0;
+    this.state.timerInterval && clearInterval(this.state.timerInterval);
+  }
+
+ onStartStop() {
+   if (!this.state.isStart) {
+     this.setState({
+       isStart: !this.state.isStart,
+       timerInterval: setInterval(() => {
+         this.decreaseTimer();
+         this.phaseControl();
+       }, 1000)
+     })
+   } else {
+     this.audioBeep.current.pause();
+     this.audioBeep.current.currentTime = 0;
+     this.state.timerInterval && clearInterval(this.state.timerInterval);
+
+     this.setState({
+       isStart: !this.state.isStart,
+       timerInterval: null
+     });
+   }
+ }
+
+ decreaseTimer() {
+   this.setState({
+     timeLeftInSecond: this.state.timeLeftInSecond - 1
+   });
+ }
+
+ phaseControl() {
+   if (this.state.timeLeftInSecond === 0) {
+     this.audioBeep.current.play();
+   } else if (this.state.timeLeftInSecond === -1) {
+     if (this.state.timeLabel === 'Session') {
+       this.setState({
+         timeLabel: 'Break',
+         timeLeftInSecond: this.state.breakLength * 60
+       });
+     } else {
+       this.setState({
+         timeLabel: 'Session',
+         timeLeftInSecond: this.state.sessionLength * 60
+       });
+     }
+   }
+ }
+
+  /*startTimer = (duration) => {
     this.setState({timerRunning: true})
     let time = duration * 60
     let minutes;
@@ -54,7 +156,7 @@ export default class App extends Component {
         }
       }
     }, 1000);
-  }
+  }*/
 
 
 
@@ -66,18 +168,19 @@ export default class App extends Component {
         </div>
 
         <div className="timer-container">
-          <Timer />
+          <Timer 
+            timeLabel={this.state.timeLabel}
+            timeLeftInSecond={this.state.timeLeftInSecond}
+            />
+          <Controllers className="controllers-container"
+            onReset={this.onReset}
+            onStartStop={this.onStartStop}
+            isStart={this.state.isStart}
+          />
         </div>
 
-        <div className="controller-container">
-          <TimerControllers 
-            workTime={this.state.workTime}
-            breakTime={this.state.breakTime}
-            incrementWorkTime={this.incrementWorkTime}
-            decrementWorkTime={this.decrementWorkTime}
-            incrementBreakTime={this.incrementBreakTime}
-            decrementBreakTime={this.decrementBreakTime}
-            />
+        <div className="settings-container">
+          <Settings />
         </div>
         <div className="sound-container">
          <Sound setSound={this.setSound} sound={this.state.sound} />

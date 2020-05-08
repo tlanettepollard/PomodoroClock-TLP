@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
-export default class BreakController extends Component {
-
+export default class BreakSettings extends Component {
     handleBreakIncrement = () => {
         this.props.incrementBreakTime()
     }
@@ -14,14 +13,14 @@ export default class BreakController extends Component {
         const btnClassName = this.props.isStart ? 'disable' : '';
 
         return (
-            <div className="prod-container">
-                <div className="control-section">
+            <div className="settings">
+                <div className="settings-section">
                     <label id="break-label">Break Length</label>
                     <div>
-                        <button className=
-                        {btnClassName} id="break-increment" onClick={this.handleBreakIncrement}>+</button>
+                        <button className={btnClassName} id="break-increment" onClick={this.handleBreakIncrement}> + </button>
                         <span id="break-length">{this.props.breakTime}</span>
-                        <button className={btnClassName} id="break-decrement" onClick={this.handleBreakDecrement}>-</button>
+                        <button className={btnClassName}
+                        id="break-decrement" onClick={this.handleBreakDecrement}> - </button>
                     </div>
                 </div>
             </div>

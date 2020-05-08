@@ -90,11 +90,17 @@ body {
   height: 200px;
 }
 
+/* Settings Container */
 
+.settings {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 /* Controller Container */
 
-.controller-container {
+.settings-container {
   display: flex;
   flex-direction: row;
   border: 1px solid black;
