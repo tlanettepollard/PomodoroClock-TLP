@@ -114,6 +114,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 120px;
 }
 #session-label {
   font-family: var(--ft-family-heading);
@@ -130,7 +131,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  width: 40px;
+  width: 100px;
   margin-bottom: 10px;
 }
 
@@ -139,6 +140,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 120px;
 }
 
 #break-label {
@@ -155,10 +157,20 @@ body {
 .break-btn {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  width: 40px;
+  align-items: baseline;
+  width: 100px;
   margin-bottom: 10px;
 }
+
+.break-ctrl-btn,
+.session-ctrl-btn {
+  font-size: 30px;
+  color: var(--color-sunkist-orange);
+  
+}
+
+
+  
 
 /* Sound */
 

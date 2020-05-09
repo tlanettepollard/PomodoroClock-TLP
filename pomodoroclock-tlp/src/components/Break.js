@@ -13,8 +13,13 @@ const Break = ({
             <p id="break-label">Break</p>
             <p id="break-length">{breakLengthMinutes}</p>
             <div className="break-btn">
-                <button id="break-increment" onClick={incrementBreakLength}>+</button>
-                <button id="break-decrement" onClick={decrementBreakLength}>-</button>
+                <button className="break-ctrl-btn" id="break-increment" onClick={incrementBreakLength}>
+                    <i class="fa fa-plus-square"></i>
+                </button>
+                <button className="break-ctrl-btn"
+                id= "break-decrement" onClick={decrementBreakLength}>
+                    <i class="fa fa-minus-square"></i>
+                </button>
             </div>
         </div>
     );
