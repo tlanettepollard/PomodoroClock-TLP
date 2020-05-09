@@ -10,9 +10,9 @@ const TimeLeft = ({sessionLengthSeconds}) => {
 
     const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss');
     return (
-      <div>
-        <p id="timer-label">Timer</p>
-        <p id="time-left">{formattedTimeLeft}</p>
+      <div className="time-content">
+        <label id="timer-label">Timer</label>
+        <span id="time-left">{formattedTimeLeft}</span>
       </div>
     );
 };

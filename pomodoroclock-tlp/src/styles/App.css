@@ -86,6 +86,11 @@ body {
   border-radius: 25px;
 }
 
+.time-content {
+  display: flex;
+  flex-direction: column;
+}
+
 #timer-label {
   font-family: var(--ft-family-heading);
   font-size: 50px;
@@ -169,8 +174,8 @@ body {
   
 }
 
+/* Controllers */
 
-  
 
 /* Sound */
 
