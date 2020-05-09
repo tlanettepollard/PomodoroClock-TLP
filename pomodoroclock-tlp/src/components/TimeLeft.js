@@ -9,7 +9,12 @@ const TimeLeft = ({sessionLengthSeconds}) => {
     const [timeLeft] = useState(sessionLengthSeconds);
 
     const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss');
-    return <p id="time-left">{formattedTimeLeft}</p>
+    return (
+      <div>
+        <p id="timer-label">Timer</p>
+        <p id="time-left">{formattedTimeLeft}</p>
+      </div>
+    );
 };
 
 export default TimeLeft;

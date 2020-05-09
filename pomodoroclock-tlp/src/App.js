@@ -42,22 +42,27 @@ function App() {
         </div>
 
         <div className="timeleft-container">
-          <TimeLeft sessionLengthSeconds={sessionLengthSeconds}/>
-          <Controllers />
+          <TimeLeft sessionLengthSeconds={sessionLengthSeconds} />
         </div>
 
+        <div className="control-container">
+          <Controllers />
+        </div>
+        
         <div className="settings-container">
-          <Break 
-          breakLengthSeconds={breakLengthSeconds}
-          incrementBreakLength={incrementBreakLength}
-          decrementBreakLength={decrementBreakLength}/>
-          <Session 
-          sessionLengthSeconds={sessionLengthSeconds}
-          incrementSessionLength={incrementSessionLength}
-          decrementSessionLength={decrementSessionLength}/>
+          <Break
+            breakLengthSeconds={breakLengthSeconds}
+            incrementBreakLength={incrementBreakLength}
+            decrementBreakLength={decrementBreakLength}
+          />
+          <Session
+            sessionLengthSeconds={sessionLengthSeconds}
+            incrementSessionLength={incrementSessionLength}
+            decrementSessionLength={decrementSessionLength}
+          />
         </div>
         <div className="sound-container">
-         <Sound  />
+          <Sound />
         </div>
         <div className="footer">
           <h3 className="footer-attribute">
