@@ -42,11 +42,13 @@ function App() {
         </div>
 
         <div className="timeleft-container">
-          <TimeLeft sessionLengthSeconds={sessionLengthSeconds} />
+          <TimeLeft 
+          sessionLengthSeconds={sessionLengthSeconds} />
         </div>
 
         <div className="control-container">
-          <Controllers />
+          <Controllers
+          />
         </div>
         
         <div className="settings-container">
@@ -78,6 +80,8 @@ function App() {
     );
   
 }
+
+
 
 
 

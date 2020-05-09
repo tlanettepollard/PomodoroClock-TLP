@@ -9,6 +9,8 @@ const TimeLeft = ({sessionLengthSeconds}) => {
     const [timeLeft] = useState(sessionLengthSeconds);
 
     const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss');
+
+    
     return (
       <div className="time-content">
         <label id="timer-label">Timer</label>
