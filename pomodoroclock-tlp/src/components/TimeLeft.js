@@ -1,7 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {useState} from 'react';
 
-export default class Timer extends Component {
+const TimeLeft = ({sessionLengthSeconds}) => {
+    const [timeLeft] = useState(sessionLengthSeconds)
 
-    
-}
+    return <p id="time-left">{timeLeft}</p>
+};
+
+export default TimeLeft;
 
