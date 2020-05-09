@@ -9,11 +9,13 @@ const Break = ({
     const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").minutes(); //seconds to minutes conversion
 
     return (
-        <div>
+        <div className="break-container">
             <p id="break-label">Break</p>
             <p id="break-length">{breakLengthMinutes}</p>
-            <button id="break-increment" onClick={incrementBreakLength}>+</button>
-            <button id="break-decrement" onClick={decrementBreakLength}>-</button>
+            <div className="break-btn">
+                <button id="break-increment" onClick={incrementBreakLength}>+</button>
+                <button id="break-decrement" onClick={decrementBreakLength}>-</button>
+            </div>
         </div>
     );
 };

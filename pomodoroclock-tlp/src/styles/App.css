@@ -109,6 +109,57 @@ body {
   width: 80%;
 }
 
+.session-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#session-label {
+  font-family: var(--ft-family-heading);
+  font-size: 40px;
+}
+
+#session-length {
+  font-family: var(--ft-family-text);
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.session-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.break-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#break-label {
+  font-family: var(--ft-family-heading);
+  font-size: 40px;
+}
+
+#break-length {
+  font-family: var(--ft-family-text);
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.break-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 40px;
+  margin-bottom: 10px;
+}
+
 /* Sound */
 
 .sound-container {
