@@ -1,10 +1,15 @@
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
 import React from 'react';
 import {useState} from 'react';
 
-const TimeLeft = ({sessionLengthSeconds}) => {
-    const [timeLeft] = useState(sessionLengthSeconds)
+momentDurationFormatSetup(moment);
 
-    return <p id="time-left">{timeLeft}</p>
+const TimeLeft = ({sessionLengthSeconds}) => {
+    const [timeLeft] = useState(sessionLengthSeconds);
+
+    const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss');
+    return <p id="time-left">{formattedTimeLeft}</p>
 };
 
 export default TimeLeft;
