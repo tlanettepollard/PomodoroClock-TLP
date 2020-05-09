@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import '../src/styles/App.css';
 
 import Break from './components/Break';
@@ -8,11 +8,33 @@ import Controllers from './components/Controllers';
 import Sound from './components/Sound';
 
 
-export default class App extends Component {
-  
+function App() {
+  const [breakLengthSeconds, setBreakLength] = useState(300);
+  const [sessionLengthSeconds, setSessionLength] = useState(60 * 25);
+
+  const decrementBreakLength = () => {
+    const newBreakLength = breakLengthSeconds - 60;
+    if (newBreakLength < 0) {
+      setBreakLength(0);
+    } else {
+      setBreakLength(newBreakLength);
+    }
+  };
+
+  const incrementBreakLength = () => setBreakLength(breakLengthSeconds + 60);
+
+  const decrementSessionLength = () => {
+    const newSessionLength = sessionLengthSeconds - 60;
+    if (newSessionLength < 0) {
+      setSessionLength(0);
+    } else {
+      setSessionLength(newSessionLength);
+    }
+  };
+  const incrementSessionLength = () =>
+  setSessionLength(sessionLengthSeconds + 60);
 
 
-  render() {
     return (
       <div className="container">
         <div className="header-container">
@@ -25,8 +47,14 @@ export default class App extends Component {
         </div>
 
         <div className="settings-container">
-          <Break />
-          <Session />
+          <Break 
+          breakLengthSeconds={breakLengthSeconds}
+          incrementBreakLength={incrementBreakLength}
+          decrementBreakLength={decrementBreakLength}/>
+          <Session 
+          sessionLengthSeconds={sessionLengthSeconds}
+          incrementSessionLength={incrementSessionLength}
+          decrementSessionLength={decrementSessionLength}/>
         </div>
         <div className="sound-container">
          <Sound  />
@@ -43,7 +71,8 @@ export default class App extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
+export default App;
   
