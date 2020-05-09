@@ -73,7 +73,7 @@ body {
 
 
 /* Timer */ 
-.timer-container {
+.timeleft-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
