@@ -10,11 +10,11 @@ export default class Session extends Component {
                 <label id="session-label">Session</label>
                 <div>
                     <button className={btnClassName} id="session-increment" onClick={this.props.onIncreaseSession}>
-                        <i class="fa fa-plus-square"></i>
+                        <i className="fa fa-plus-square"></i>
                     </button>
                     <span id="session-length">{this.props.sessionLength}</span>
                     <button className={btnClassName} id="session-decrement" onClick={this.props.onDecreaseSession}>
-                        <i class="fa fa-minus-square"></i>
+                        <i className="fa fa-minus-square"></i>
                     </button>
                 </div>
             </div>

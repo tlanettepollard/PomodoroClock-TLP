@@ -6,7 +6,7 @@ import Break from './components/Break';
 import Session from './components/Session';
 import TimeLeft from './components/TimeLeft';
 import Controllers from './components/Controllers';
-import Sound from './components/Sound';
+//import Sound from './components/Sound';
 
 
 
@@ -17,10 +17,10 @@ export default class App extends Component {
     this.audioBeep = React.createRef();
 
     this.state = {
-      breakLength: Number.parseInt(this.props.defaultBreakLength, 5),
-      sessionLength: Number.parseInt(this.props.defaultSessionLength, 25),
+      breakLength: Number.parseInt(this.props.defaultBreakLength, 10),
+      sessionLength: Number.parseInt(this.props.defaultSessionLength, 10),
       timeLabel: 'Session',
-      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 25) * 60,
+      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
       isStart: false,
       timerInterval: null
 
@@ -70,10 +70,10 @@ export default class App extends Component {
    }
    onReset() {
      this.setState({
-       breakLength: Number.parseInt(this.props.defaultBreakLength, 5),
-       sessionLength: Number.parseInt(this.props.defaultSessionLength, 25),
+       breakLength: Number.parseInt(this.props.defaultBreakLength, 10),
+       sessionLength: Number.parseInt(this.props.defaultSessionLength, 10),
        timeLabel: 'Session',
-       timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 25) * 60,
+       timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 10) * 60,
        isStart: false,
        timerInterval: null
      });
@@ -146,10 +146,21 @@ render() {
         isStart={this.state.isStart}
         />
       </div>
+      <audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
 
       <div className="settings-container">
-        <Break/>
-        <Session/>
+        <Break
+        breakLength={this.state.breakLength}
+        onIncreaseBreak={this.onIncreaseBreak}
+        onDecreaseBreak={this.onDecreaseBreak}
+        isStart={this.state.isStart}
+        />
+        <Session
+        sessionLength={this.state.sessionLength}
+        onIncreaseSession={this.onIncreaseSession}
+        onDecreaseSession={this.onDecreaseSession}
+        isStart={this.state.isStart}
+        />
       </div>
     </div>
   )
