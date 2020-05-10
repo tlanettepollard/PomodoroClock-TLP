@@ -131,6 +131,26 @@ render() {
       <div className="head-container">
         <h1 className="app-title"> Rebel-Cow Pomodoro Clock </h1>
       </div>
+
+      <div className="timeleft-container">
+        <TimeLeft 
+        timeLabel={this.state.timeLabel}
+        timeLeftInSecond={this.state.timeLeftInSecond}
+        />
+      </div>
+
+      <div className="control-container">
+        <Controllers
+        onReset={this.onReset}
+        onStartStop={this.onStartStop}
+        isStart={this.state.isStart}
+        />
+      </div>
+
+      <div className="settings-container">
+        <Break/>
+        <Session/>
+      </div>
     </div>
   )
 }
