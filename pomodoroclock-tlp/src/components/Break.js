@@ -2,28 +2,6 @@
 import moment from 'moment';
 import React from 'react';
 
-/*export default class Break extends Component {
-    render() {
-        const btnClassName = this.props.isStart ? 'disable' : '';
-
-        return(
-            <div className="break-container">
-                <label id="break-label">Break Length</label>
-                <div>
-                    <button className={btnClassName} id="break-increment" onClick={this.props.onIncreaseBreak}>
-                      <i className="fa fa-plus-square"> </i>  
-                    </button>
-                    <span id="break-length">{this.props.breakLength}</span>
-                    <button className={btnClassName} id="break-decrement" onClick={this.props.onDecreaseBreak}>
-                        <i className="fa fa-minus-square"></i>
-                    </button>
-                </div>
-            </div>
-        )
-    }
-}*/
-
-
 
 
 const Break = ({
