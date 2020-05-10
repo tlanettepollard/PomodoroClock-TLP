@@ -12,6 +12,7 @@ export default class Break extends Component {
                     <button className={btnClassName} id="break-increment" onClick={this.props.onIncreaseBreak}>
                       <i class="fa fa-plus-square"> </i>  
                     </button>
+                    <span id="break-length">{this.props.breakLength}</span>
                     <button className={btnClassName} id="break-decrement" onClick={this.props.onDecreaseBreak}>
                         <i class="fa fa-minus-square"></i>
                     </button>
