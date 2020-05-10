@@ -162,8 +162,14 @@ render() {
         isStart={this.state.isStart}
         />
       </div>
+
+      <div className="footer">
+        <h3 className="footer-attribute">
+        React JS Pomodoro Clock App created by {" "
+        } <a href="https://github.com/TLanetteRose"> {" "} <span> T.Lanette Pollard </span> </a>{" "} &nbsp;FreeCodeCamp Front End Libraries Project</h3> 
+      </div>
     </div>
-  )
+  );
 }
 
 }
