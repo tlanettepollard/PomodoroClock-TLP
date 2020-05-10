@@ -82,8 +82,17 @@ function App() {
     audioElement.current.load();
     //clear timeout interval
     clearInterval(intervalId);
-    
-  }
+    //set intervalId null
+    setIntervalId(null);
+    //set the sessiontype to 'Session'
+    setCurrentSessionType('Session');
+    //reset the session length to 25 minutes 
+    setSessionLength(60 * 25);
+    //reset the break length to 5 minutes
+    setBreakLength(60 * 5);
+    //reset the timer to 25 minutes (initial session length)
+    setTimeLeft(60 * 25);
+  };
 
 
     return (
