@@ -36,7 +36,7 @@ export default class App extends Component {
 
   }
   onIncreaseBreak() {
-    if(this.state.breakLength < 60 && !this.state.isStart){
+    if (this.state.breakLength < 60 && !this.state.isStart){
       this.setState({
         breakLength: this.state.breakLength + 1
       });
@@ -134,7 +134,6 @@ render() {
 
       <div className="timeleft-container">
         <TimeLeft 
-        sessionLengthSeconds={sessionLengthSeconds}
         timeLabel={this.state.timeLabel}
         timeLeftInSecond={this.state.timeLeftInSecond}
         />
