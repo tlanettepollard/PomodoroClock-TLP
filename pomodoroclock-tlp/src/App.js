@@ -19,34 +19,39 @@ function App() {
   const[intervalId, setIntervalId] = useState(null);
   const[timeLeft, setTimeLeft] = useState(sessionLengthSeconds);
 
+// change timeLeft when sessionLength changes
   useEffect(() => {
     setTimeLeft(sessionLengthSeconds);
   }, [sessionLengthSeconds]);
 
   const decrementBreakLength = () => {
     const newBreakLength = breakLengthSeconds - 60;
-    if (newBreakLength < 0) {
-      setBreakLength(0);
-    } else {
+    if (newBreakLength > 0) {
+      setBreakLength(newBreakLength);
+    } 
+  };
+
+  const incrementBreakLength = () => {
+    const newBreakLength = breakLengthSeconds + 60;
+    if (newBreakLength <= 60 * 60) {
       setBreakLength(newBreakLength);
     }
   };
 
-  const incrementBreakLength = () => setBreakLength(breakLengthSeconds + 60);
-
   const decrementSessionLength = () => {
     const newSessionLength = sessionLengthSeconds - 60;
 
-    if (newSessionLength < 0) {
-      setSessionLength(0);
-    } else {
+    if (newSessionLength > 0) {
       setSessionLength(newSessionLength);
-    }
+    } 
   };
 
-  const incrementSessionLength = () =>
-  setSessionLength(sessionLengthSeconds + 60);
-
+  const incrementSessionLength = () => {
+    const newSessionLength = sessionLengthSeconds + 60;
+    if (newSessionLength <= 60 * 60){
+      setSessionLength(sessionLengthSeconds + 60);
+    }
+};
   //Timer
 
   const isStarted = intervalId !== null;
@@ -61,14 +66,21 @@ function App() {
           if (newTimeLeft >= 0) {
             return prevTimeLeft - 1;
           }
+          // time left is less than zero
           audioElement.current.play();
+          // if session: 
           if (currentSessionType === 'Session') {
+            //switch to break
             setCurrentSessionType('Break');
-            setTimeLeft(breakLengthSeconds);
+            // setTimeLeft to breakLength
+            return (breakLengthSeconds);
           }
+          // if break:
           else if (currentSessionType === 'Break') {
+            //switch to session
             setCurrentSessionType('Session');
-            setTimeLeft(sessionLengthSeconds);
+            //setTimeLeft to sessionLength
+            return sessionLengthSeconds;
           }
         });
       }, 100);
