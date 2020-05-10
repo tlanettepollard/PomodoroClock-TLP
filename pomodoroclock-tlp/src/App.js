@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+//import React, {useState} from 'react';
+import React, {Component} from 'react';
 import '../src/styles/App.css';
 
 import Break from './components/Break';
@@ -8,7 +9,15 @@ import Controllers from './components/Controllers';
 import Sound from './components/Sound';
 
 
-function App() {
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+}
+
+//Dev-To AryanJ Tutorial in commented out sections
+/*function App() {
   const [breakLengthSeconds, setBreakLength] = useState(300);
   const [sessionLengthSeconds, setSessionLength] = useState(60 * 25);
 
@@ -79,12 +88,8 @@ function App() {
       </div>
     );
   
-}
+}*/
 
 
-
-
-
-
-export default App;
+//export default App;
   
