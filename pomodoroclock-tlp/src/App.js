@@ -5,7 +5,7 @@ import '../src/styles/App.css';
 import Break from './components/Break';
 import Session from './components/Session';
 import TimeLeft from './components/TimeLeft';
-import Controllers from './components/Controllers';
+//import Controllers from './components/Controllers';
 import Sound from './components/Sound';
 
 
@@ -38,6 +38,7 @@ function App() {
   setSessionLength(sessionLengthSeconds + 60);
 
 
+
     return (
       <div className="container">
         <div className="header-container">
@@ -50,8 +51,7 @@ function App() {
         </div>
 
         <div className="control-container">
-          <Controllers
-          />
+          
         </div>
         
         <div className="settings-container">
@@ -83,6 +83,8 @@ function App() {
     );
   
 }
+
+
 
 
 export default App;
