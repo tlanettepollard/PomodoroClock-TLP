@@ -8,7 +8,14 @@ import React from 'react';
 
 momentDurationFormatSetup(moment);
 
-const TimeLeft = ({ handleStartStopClick,startStopButtonLabel, timeLeft, timerLabel }) => {  
+const TimeLeft = ({ 
+  handleResetBtnClick,
+  handleStartStopClick,
+  startStopButtonLabel, 
+  timeLeft, 
+  timerLabel
+ }) => {
+   
     /*const [currentSessionType, setCurrentSessionType] = useState('Session');
     const [intervalId, setIntervalId] = useState(null);
     const [timeLeft, setTimeLeft] = useState(sessionLength);
@@ -64,6 +71,9 @@ const TimeLeft = ({ handleStartStopClick,startStopButtonLabel, timeLeft, timerLa
         <span id="time-left">{formattedTimeLeft}</span>
         <button id="start_stop" onClick={handleStartStopClick}>
           {startStopButtonLabel}
+        </button>
+        <button id="reset" onClick={handleResetBtnClick}>
+          Reset
         </button>
       </div>
     );

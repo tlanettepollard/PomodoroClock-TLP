@@ -6,7 +6,7 @@ import Break from './components/Break';
 import Session from './components/Session';
 import TimeLeft from './components/TimeLeft';
 //import Controllers from './components/Controllers';
-import Sound from './components/Sound';
+//import Sound from './components/Sound';
 
 
 
@@ -77,7 +77,7 @@ function App() {
   };
 
   //Reset 
-  const handleResetButtonClick = () => {
+  const handleResetBtnClick = () => {
     //reset audio
     audioElement.current.load();
     //clear timeout interval
@@ -103,13 +103,16 @@ function App() {
 
         <div className="timeleft-container">
           <TimeLeft 
+          handleResetBtnClick={handleResetBtnClick}
           handleStartStopClick={handleStartStopClick}
           timerLabel={currentSessionType}
           startStopButtonLabel={isStarted ? 'Stop' : 'Start'}
           timeLeft={timeLeft} />
         </div>
 
-        <button id="reset" onClick={handleResetButtonClick}>Reset</button>
+        <audio id="beep" ref={audioElement}>
+          <source src = "../public/tolling-bell_daniel-simion.mp3" type="audio/mpeg"/>
+        </audio>
         
         <div className="settings-container">
           <Break
@@ -123,9 +126,7 @@ function App() {
             decrementSessionLength={decrementSessionLength}
           />
         </div>
-        <div className="sound-container">
-          <Sound />
-        </div>
+       
         <div className="footer">
           <h3 className="footer-attribute">
             React JS Pomodoro Clock App created by{" "}
