@@ -1,7 +1,7 @@
-//import moment from "moment";
-import React, {Component} from "react";
+import moment from "moment";
+import React from "react";
  
-export default class Session extends Component {
+/*export default class Session extends Component {
     render() {
         const btnClassName = this.props.isStart ? 'disable' : '';
 
@@ -20,13 +20,13 @@ export default class Session extends Component {
             </div>
         )
     }
-}
+}*/
 
 
 
 
 //DevTo AryanJ Tutorial for commented section
-/*const Session = ({
+const Session = ({
     sessionLengthSeconds,
     incrementSessionLength,
     decrementSessionLength
@@ -49,4 +49,4 @@ export default class Session extends Component {
     );
 };
 
-export default Session; */
+export default Session; 

@@ -1,16 +1,16 @@
 //import React, {useState} from 'react';
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import '../src/styles/App.css';
 
 import Break from './components/Break';
 import Session from './components/Session';
 import TimeLeft from './components/TimeLeft';
 import Controllers from './components/Controllers';
-//import Sound from './components/Sound';
+import Sound from './components/Sound';
 
 
 
-export default class App extends Component {
+/*export default class App extends Component {
   constructor(props) {
     super(props);
 
@@ -32,7 +32,7 @@ export default class App extends Component {
     this.onReset = this.onReset.bind(this);
     this.onStartStop = this.onStartStop.bind(this);
     this.decreaseTimer = this.decreaseTimer.bind(this);
-   /* this.phaseControl = this.phaseControl.bind(this);*/
+    this.phaseControl = this.phaseControl.bind(this);
 
   }
   onIncreaseBreak() {
@@ -87,7 +87,7 @@ export default class App extends Component {
          isStart: !this.state.isStart,
          timerInterval: setInterval(() => {
            this.decreaseTimer();
-           /*this.phaseControl();*/
+           this.phaseControl();
          }, 1000)
        })
      } else {
@@ -107,7 +107,7 @@ decreaseTimer() {
   });
 }
 
-/*phaseControl() {
+phaseControl() {
   if (this.state.timeLeftInSecond === 0) {
     this.audioBeep.current.play();
   } else if (this.state.timeLeftInSecond === -1) {
@@ -123,7 +123,7 @@ decreaseTimer() {
       });
     }
   }
-}*/
+}
 
 render() {
   return (
@@ -172,10 +172,10 @@ render() {
   );
 }
 
-}
+}*/
 
 //Dev-To AryanJ Tutorial in commented out sections
-/*function App() {
+function App() {
   const [breakLengthSeconds, setBreakLength] = useState(300);
   const [sessionLengthSeconds, setSessionLength] = useState(60 * 25);
 
@@ -246,8 +246,8 @@ render() {
       </div>
     );
   
-}*/
+}
 
 
-//export default App;
+export default App;
   

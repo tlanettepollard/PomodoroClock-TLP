@@ -1,12 +1,12 @@
 //Dev-To AryanJ Tutorial in commented out sections
-//import moment from 'moment';
-//import momentDurationFormatSetup from 'moment-duration-format';
-import React, {Component} from 'react';
-//import {useState} from 'react';
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
+import React from 'react';
+import {useState} from 'react';
 
-//momentDurationFormatSetup(moment);
+momentDurationFormatSetup(moment);
 
-/*const TimeLeft = ({sessionLengthSeconds}) => {
+const TimeLeft = ({sessionLengthSeconds}) => {
     const [timeLeft] = useState(sessionLengthSeconds);
 
     const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss');
@@ -17,9 +17,9 @@ import React, {Component} from 'react';
         <span id="time-left">{formattedTimeLeft}</span>
       </div>
     );
-};*/
+};
 
-  const formatTime = (timeLeftInSecond) => {
+  /*const formatTime = (timeLeftInSecond) => {
   let minute = Math.floor(timeLeftInSecond / 60);
   if (minute < 10) minute = '0' + minute;
 
@@ -39,10 +39,10 @@ export default class TimeLeft extends Component {
     )
     
   }
-}
+}*/
 
 
 
 
 
-//export default TimeLeft;
+export default TimeLeft;
