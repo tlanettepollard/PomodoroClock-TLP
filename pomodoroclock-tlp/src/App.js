@@ -32,7 +32,7 @@ export default class App extends Component {
     this.onReset = this.onReset.bind(this);
     this.onStartStop = this.onStartStop.bind(this);
     this.decreaseTimer = this.decreaseTimer.bind(this);
-    this.phaseControl = this.phaseControl.bind(this);
+   /* this.phaseControl = this.phaseControl.bind(this);*/
 
   }
   onIncreaseBreak() {
@@ -87,7 +87,7 @@ export default class App extends Component {
          isStart: !this.state.isStart,
          timerInterval: setInterval(() => {
            this.decreaseTimer();
-           this.phaseControl();
+           /*this.phaseControl();*/
          }, 1000)
        })
      } else {
@@ -107,7 +107,7 @@ decreaseTimer() {
   });
 }
 
-phaseControl() {
+/*phaseControl() {
   if (this.state.timeLeftInSecond === 0) {
     this.audioBeep.current.play();
   } else if (this.state.timeLeftInSecond === -1) {
@@ -123,7 +123,7 @@ phaseControl() {
       });
     }
   }
-}
+}*/
 
 render() {
   return (
