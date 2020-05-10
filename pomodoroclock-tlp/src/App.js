@@ -134,6 +134,7 @@ render() {
 
       <div className="timeleft-container">
         <TimeLeft 
+        sessionLengthSeconds={sessionLengthSeconds}
         timeLabel={this.state.timeLabel}
         timeLeftInSecond={this.state.timeLeftInSecond}
         />
