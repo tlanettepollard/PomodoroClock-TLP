@@ -13,7 +13,73 @@ import Sound from './components/Sound';
 export default class App extends Component {
   constructor(props) {
     super(props);
+
+    this.audioBeep = React.createRef();
+
+    this.state = {
+      breakLength: Number.parseInt(this.props.defaultBreakLength, 5),
+      sessionLength: Number.parseInt(this.props.defaultSessionLength, 25),
+      timeLabel: 'Session',
+      timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 25) * 60,
+      isStart: false,
+      timerInterval: null
+
+    }
+    this.onIncreaseBreak = this.onIncreaseBreak.bind(this);
+    this.onDecreaseBreak = this.onDecreaseBreak.bind(this);
+    this.onIncreaseSession = this.onIncreaseSession.bind(this);
+    this.onDecreaseSession = this.onDecreaseSession.bind(this);
+    this.onReset = this.onReset.bind(this);
+    this.onStartStop = this.onStartStop.bind(this);
+    this.decreaseTimer = this.decreaseTimer.bind(this);
+    this.phaseControl = this.phaseControl.bind(this);
+
   }
+  onIncreaseBreak() {
+    if(this.state.breakLength < 60 && !this.state.isStart){
+      this.setState({
+        breakLength: this.state.breakLength + 1
+      });
+    }
+  }
+
+  onDecreaseBreak() {
+    if (this.state.breakLength > 1 && !this.state.isStart) {
+      this.setState({
+        breakLength: this.state.breakLength - 1
+      });
+    }
+  }
+
+  onIncreaseSession() {
+    if (this.state.sessionLength < 60 && !this.state.isStart) {
+      this.setState({
+        sessionLength: this.state.sessionLength + 1,
+        timeLeftInSecond: (this.state.sessionLength + 1) * 60
+      });
+    }
+  }
+
+   onDecreaseSession(){
+     if (this.state.sessionLength > 1 && !this.state.isStart) {
+       this.setState({
+         sessionLength: this.state.sessionLength - 1,
+         timeLeftInSecond: (this.state.sessionLength - 1) * 60
+       });
+     }
+   }
+   onReset() {
+     this.setState({
+       breakLength: Number.parseInt(this.props.defaultBreakLength, 5),
+       sessionLength: Number.parseInt(this.props.defaultSessionLength, 25),
+       timeLabel: 'Session',
+       timeLeftInSecond: Number.parseInt(this.props.defaultSessionLength, 25) * 60,
+       isStart: false,
+       timerInterval: null
+     });
+   }
+
+
 }
 
 //Dev-To AryanJ Tutorial in commented out sections
