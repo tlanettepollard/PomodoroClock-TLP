@@ -28,15 +28,16 @@ function App() {
 
   const decrementSessionLength = () => {
     const newSessionLength = sessionLengthSeconds - 60;
+
     if (newSessionLength < 0) {
       setSessionLength(0);
     } else {
       setSessionLength(newSessionLength);
     }
   };
+
   const incrementSessionLength = () =>
   setSessionLength(sessionLengthSeconds + 60);
-
 
 
     return (
