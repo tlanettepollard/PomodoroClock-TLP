@@ -1,5 +1,5 @@
 //import React, {useState} from 'react';
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import '../src/styles/App.css';
 
 import Break from './components/Break';
@@ -14,6 +14,14 @@ import Sound from './components/Sound';
 function App() {
   const [breakLengthSeconds, setBreakLength] = useState(300);
   const [sessionLengthSeconds, setSessionLength] = useState(60 * 25);
+  const audioElement = useRef(null);
+  const[currentSessionType, setCurrentSessionType] = useState('Session');
+  const[intervalId, setIntervalId] = useState(null);
+  const[timeLeft, setTimeLeft] = useState(sessionLengthSeconds);
+
+  useEffect(() => {
+    setTimeLeft(sessionLengthSeconds);
+  }, [sessionLengthSeconds]);
 
   const decrementBreakLength = () => {
     const newBreakLength = breakLengthSeconds - 60;
@@ -39,6 +47,44 @@ function App() {
   const incrementSessionLength = () =>
   setSessionLength(sessionLengthSeconds + 60);
 
+  //Timer
+
+  const isStarted = intervalId !== null;
+  const handleStartStopClick = () => {
+    if (isStarted) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }else {
+      const newIntervalId = setInterval(() => {
+        setTimeLeft(prevTimeLeft => {
+          const newTimeLeft = prevTimeLeft -1;
+          if (newTimeLeft >= 0) {
+            return prevTimeLeft - 1;
+          }
+          audioElement.current.play();
+          if (currentSessionType === 'Session') {
+            setCurrentSessionType('Break');
+            setTimeLeft(breakLengthSeconds);
+          }
+          else if (currentSessionType === 'Break') {
+            setCurrentSessionType('Session');
+            setTimeLeft(sessionLengthSeconds);
+          }
+        });
+      }, 100);
+      setIntervalId(newIntervalId);
+    }
+  };
+
+  //Reset 
+  const handleResetButtonClick = () => {
+    //reset audio
+    audioElement.current.load();
+    //clear timeout interval
+    clearInterval(intervalId);
+    
+  }
+
 
     return (
       <div className="container">
@@ -48,12 +94,13 @@ function App() {
 
         <div className="timeleft-container">
           <TimeLeft 
-          sessionLengthSeconds={sessionLengthSeconds} />
+          handleStartStopClick={handleStartStopClick}
+          timerLabel={currentSessionType}
+          startStopButtonLabel={isStarted ? 'Stop' : 'Start'}
+          timeLeft={timeLeft} />
         </div>
 
-        <div className="control-container">
-          
-        </div>
+        <button id="reset" onClick={handleResetButtonClick}>Reset</button>
         
         <div className="settings-container">
           <Break
