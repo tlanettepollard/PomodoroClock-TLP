@@ -26,31 +26,31 @@ function App() {
 
   const decrementBreakLength = () => {
     const newBreakLength = breakLengthSeconds - 60;
-    if (newBreakLength > 0) {
+
+    if (newBreakLength < 0) {
+      setBreakLength(0);
+    } else {
       setBreakLength(newBreakLength);
-    } 
+    }
   };
 
   const incrementBreakLength = () => {
-    const newBreakLength = breakLengthSeconds + 60;
-    if (newBreakLength <= 60 * 60) {
-      setBreakLength(newBreakLength);
-    }
+    setBreakLength(breakLengthSeconds + 60);
   };
 
   const decrementSessionLength = () => {
     const newSessionLength = sessionLengthSeconds - 60;
 
-    if (newSessionLength > 0) {
+    if (newSessionLength < 0) {
+      setSessionLength(0);
+    } else {
       setSessionLength(newSessionLength);
-    } 
+    }
   };
 
   const incrementSessionLength = () => {
-    const newSessionLength = sessionLengthSeconds + 60;
-    if (newSessionLength <= 60 * 60){
       setSessionLength(sessionLengthSeconds + 60);
-    }
+    
 };
   //Timer
 
@@ -59,10 +59,10 @@ function App() {
     if (isStarted) {
       clearInterval(intervalId);
       setIntervalId(null);
-    }else {
+    } else {
       const newIntervalId = setInterval(() => {
         setTimeLeft(prevTimeLeft => {
-          const newTimeLeft = prevTimeLeft -1;
+          const newTimeLeft = prevTimeLeft - 1;
           if (newTimeLeft >= 0) {
             return prevTimeLeft - 1;
           }
@@ -72,6 +72,7 @@ function App() {
           if (currentSessionType === 'Session') {
             //switch to break
             setCurrentSessionType('Break');
+            setTimeLeft(breakLengthSeconds);
             // setTimeLeft to breakLength
             return (breakLengthSeconds);
           }
@@ -80,7 +81,7 @@ function App() {
             //switch to session
             setCurrentSessionType('Session');
             //setTimeLeft to sessionLength
-            return sessionLengthSeconds;
+            setTimeLeft(sessionLengthSeconds);
           }
         });
       }, 100);
@@ -121,7 +122,9 @@ function App() {
           startStopButtonLabel={isStarted ? 'Stop' : 'Start'}
           timeLeft={timeLeft} />
         </div>
-
+        <button id="reset" onClick={handleResetBtnClick}>
+          Reset 
+        </button>
         <audio id="beep" ref={audioElement}>
           <source src = "../public/tolling-bell_daniel-simion.mp3" type="audio/mpeg"/>
         </audio>
