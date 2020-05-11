@@ -6,6 +6,7 @@ import React from 'react';
 //import {useEffect} from 'react';
 
 
+
 momentDurationFormatSetup(moment);
 
 const TimeLeft = ({ 
@@ -13,7 +14,7 @@ const TimeLeft = ({
   handleStartStopClick,
   //startStopButtonLabel, 
   timeLeft, 
-  timerLabel
+  timerLabel,
  }) => {
 
     const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss', {trim: false});
@@ -33,6 +34,5 @@ const TimeLeft = ({
     );
 };
 
-  
 
 export default TimeLeft;
