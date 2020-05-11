@@ -1,36 +1,15 @@
-//import moment from 'moment';
-import React, {Component} from 'react';
-
-export default class Break extends Component {
-    render() {
-        const btnClassName = this.props.isStart ? 'disable' : '';
-
-        return(
-            <div className="break-container">
-                <label id="break-label">Break Length</label>
-                <div>
-                    <button className={btnClassName} id="break-increment" onClick={this.props.onIncreaseBreak}>
-                      <i class="fa fa-plus-square"> </i>  
-                    </button>
-                    <span id="break-length">{this.props.breakLength}</span>
-                    <button className={btnClassName} id="break-decrement" onClick={this.props.onDecreaseBreak}>
-                        <i class="fa fa-minus-square"></i>
-                    </button>
-                </div>
-            </div>
-        )
-    }
-}
-
-
-
 //DevTo AryanJ Tutorial commented out sections
-/*const Break = ({
+import moment from 'moment';
+import React from 'react';
+
+
+
+const Break = ({
     breakLengthSeconds,
     incrementBreakLength,
     decrementBreakLength,
     }) => {
-    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").minutes(); //seconds to minutes conversion
+    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").minutes();  
 
     return (
         <div className="break-container">
@@ -42,11 +21,11 @@ export default class Break extends Component {
                 </button>
                 <button className="break-ctrl-btn"
                 id= "break-decrement" onClick={decrementBreakLength}>
-                    <i class="fa fa-minus-square">//</i>
+                    <i class="fa fa-minus-square"></i>
                 </button>
             </div>
         </div>
     );
 };
 
-export default Break; */
+export default Break; 
