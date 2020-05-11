@@ -26,31 +26,30 @@ function App() {
 
   const decrementBreakLength = () => {
     const newBreakLength = breakLengthSeconds - 60;
-
-    if (newBreakLength < 0) {
-      setBreakLength(0);
-    } else {
+    if (newBreakLength > 0) {
       setBreakLength(newBreakLength);
     }
   };
 
   const incrementBreakLength = () => {
-    setBreakLength(breakLengthSeconds + 60);
+    const newBreakLength = breakLengthSeconds + 60;
+    if (newBreakLength <= 60 * 60) {
+    setBreakLength(newBreakLength);
+    }
   };
 
   const decrementSessionLength = () => {
     const newSessionLength = sessionLengthSeconds - 60;
-
-    if (newSessionLength < 0) {
-      setSessionLength(0);
-    } else {
+    if (newSessionLength > 0) {
       setSessionLength(newSessionLength);
-    }
+    } 
   };
 
   const incrementSessionLength = () => {
+    const newSessionLength = sessionLengthSeconds + 60;
+    if (newSessionLength <= 60 * 60) {
       setSessionLength(sessionLengthSeconds + 60);
-    
+    }
 };
   //Timer
 
@@ -64,7 +63,7 @@ function App() {
         setTimeLeft(prevTimeLeft => {
           const newTimeLeft = prevTimeLeft - 1;
           if (newTimeLeft >= 0) {
-            return prevTimeLeft - 1;
+            return newTimeLeft;
           }
           // time left is less than zero
           audioElement.current.play();
@@ -72,16 +71,15 @@ function App() {
           if (currentSessionType === 'Session') {
             //switch to break
             setCurrentSessionType('Break');
-            setTimeLeft(breakLengthSeconds);
             // setTimeLeft to breakLength
-            return (breakLengthSeconds);
+            return breakLengthSeconds;
           }
           // if break:
           else if (currentSessionType === 'Break') {
             //switch to session
             setCurrentSessionType('Session');
             //setTimeLeft to sessionLength
-            setTimeLeft(sessionLengthSeconds);
+            return sessionLengthSeconds;
           }
         });
       }, 100);
