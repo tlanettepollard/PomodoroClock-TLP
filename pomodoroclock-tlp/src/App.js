@@ -121,10 +121,6 @@ function App() {
           timeLeft={timeLeft} />
         </div>
         
-        <audio id="beep" ref={audioElement}>
-          <source src = "../public/tolling-bell_daniel-simion.mp3" type="audio/mpeg"/>
-        </audio>
-        
         <div className="settings-container">
           <Break
             breakLengthSeconds={breakLengthSeconds}
@@ -137,6 +133,8 @@ function App() {
             decrementSessionLength={decrementSessionLength}
           />
         </div>
+        <audio id="beep" preload="auto" ref={audioElement} src="../public/tolling-bell_daniel-simion. mp3" type="audio/mpeg">
+        </audio>
        
         <div className="footer">
           <h3 className="footer-attribute">
