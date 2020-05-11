@@ -11,7 +11,7 @@ momentDurationFormatSetup(moment);
 const TimeLeft = ({ 
   handleResetBtnClick,
   handleStartStopClick,
-  startStopButtonLabel, 
+  //startStopButtonLabel, 
   timeLeft, 
   timerLabel
  }) => {
