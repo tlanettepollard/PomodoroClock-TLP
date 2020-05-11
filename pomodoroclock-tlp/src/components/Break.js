@@ -9,7 +9,7 @@ const Break = ({
     incrementBreakLength,
     decrementBreakLength,
     }) => {
-    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").minutes();  
+    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").asMinutes();  
 
     return (
         <div className="break-container">

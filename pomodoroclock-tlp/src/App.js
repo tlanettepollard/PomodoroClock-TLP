@@ -33,7 +33,7 @@ function App() {
 
   const incrementBreakLength = () => {
     const newBreakLength = breakLengthSeconds + 60;
-    if (newBreakLength <= 60 * 5) {
+    if (newBreakLength <= 60 * 60) {
     setBreakLength(newBreakLength);
     }
   };
@@ -47,7 +47,7 @@ function App() {
 
   const incrementSessionLength = () => {
     const newSessionLength = sessionLengthSeconds + 60;
-    if (newSessionLength <= 60 * 25) {
+    if (newSessionLength <= 60 * 60) {
       setSessionLength(sessionLengthSeconds + 60);
     }
 };
@@ -98,11 +98,11 @@ function App() {
     //set the sessiontype to 'Session'
     setCurrentSessionType('Session');
     //reset the session length to 25 minutes 
-    setSessionLength(25);
+    setSessionLength(60 * 25);
     //reset the break length to 5 minutes
-    setBreakLength(5);
+    setBreakLength(60 * 5);
     //reset the timer to 25 minutes (initial session length)
-    setTimeLeft(25);
+    setTimeLeft(60 * 25);
   };
 
 

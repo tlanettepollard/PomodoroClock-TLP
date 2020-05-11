@@ -8,7 +8,7 @@ const Session = ({
     incrementSessionLength,
     decrementSessionLength
 }) => {
-    const sessionLengthMinutes = moment.duration(sessionLengthSeconds, 's').minutes();
+    const sessionLengthMinutes = moment.duration(sessionLengthSeconds, 's').asMinutes();
     
     return (
         <div className="session-container">
