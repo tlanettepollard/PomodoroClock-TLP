@@ -120,9 +120,7 @@ function App() {
           startStopButtonLabel={isStarted ? 'Stop' : 'Start'}
           timeLeft={timeLeft} />
         </div>
-        <button id="reset" onClick={handleResetBtnClick}>
-          Reset 
-        </button>
+        
         <audio id="beep" ref={audioElement}>
           <source src = "../public/tolling-bell_daniel-simion.mp3" type="audio/mpeg"/>
         </audio>

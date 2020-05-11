@@ -23,7 +23,11 @@ const TimeLeft = ({
         <label id="timer-label">{timerLabel}</label>
         <span id="time-left">{formattedTimeLeft}</span>
         <button id="start_stop" onClick={handleStartStopClick}>
-          {startStopButtonLabel}
+          <i className="fa fa-play fa-2x"/>
+          <i className="fa fa-pause fa-2x"/>
+        </button>
+        <button id="reset" onClick={handleResetBtnClick}>
+          <i className="fa fa-refresh fa-2x"/> 
         </button>
       </div>
     );
