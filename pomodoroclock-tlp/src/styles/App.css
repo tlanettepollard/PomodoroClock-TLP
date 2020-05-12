@@ -119,10 +119,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
-  padding: 2rem;
   border-radius: 2rem;
-  /*width: 200px;*/
+  width: 200px;
 }
 #session-label {
   font-family: var(--ft-family-heading);
@@ -147,6 +145,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 2rem;
   width: 200px;
 }
 
@@ -163,10 +162,9 @@ body {
 
 .break-btn {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100px;
-  margin-bottom: 10px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem;
 }
 
 .break-ctrl-btn,

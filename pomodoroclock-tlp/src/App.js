@@ -11,7 +11,7 @@ import TimeLeft from './components/TimeLeft';
 
 
 //Dev-To AryanJ Tutorial in commented out sections
-function App() {
+/*function App() {
   const [breakLengthSeconds, setBreakLength] = useState(300);
   const [sessionLengthSeconds, setSessionLength] = useState(60 * 25);
   const audioElement = useRef(null);
@@ -149,6 +149,26 @@ function App() {
       </div>
     );
   
+}*/
+
+const App = () => {
+  const [sessionLengthSeconds, setSessionLength] = useState(25);
+  const [breakLengthSeconds, setBreakLength] = useState(5);
+  const [timerLabel, setTimerLabel] = useState('Session');
+  const [timeLeft, setTimeLeft] = useState(25 * 60);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const myAudio = useRef();
+  const context = new AudioContext();
+
+  const incrementSessionLength = () => {
+    if (!timerRunning && sessionLengthSeconds < 60){
+      setSessionLength(sessionLengthSeconds +1)
+      setTimeLeft((sessionLengthSeconds + 1) * 60);
+    }
+  }
+
+
+
 }
 
 
