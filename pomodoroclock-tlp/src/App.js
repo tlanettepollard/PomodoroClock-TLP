@@ -5,6 +5,7 @@ import '../src/styles/App.css';
 import Break from './components/Break';
 import Session from './components/Session';
 import TimeLeft from './components/TimeLeft';
+import soundfile from './michigan_frog.wav';
 //import Controllers from './components/Controllers';
 //import Sound from './components/Sound';
 
@@ -164,6 +165,19 @@ const App = () => {
     if (!timerRunning && sessionLengthSeconds < 60){
       setSessionLength(sessionLengthSeconds +1)
       setTimeLeft((sessionLengthSeconds + 1) * 60);
+    }
+  }
+
+  const decrementSessionLength = () => {
+    if (!timerRunning && sessionLengthSeconds > 1){
+      setSessionLength(sessionLengthSeconds - 1)
+      setTimeLeft((sessionLengthSeconds - 1) * 60);
+    }
+  }
+
+  const incrementBreakLength = () => {
+    if (!timerRunning && breakLengthSeconds > 1) {
+      setBreakLength(breakLengthSeconds - 1)
     }
   }
 
