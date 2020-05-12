@@ -82,7 +82,7 @@ function App() {
             return sessionLengthSeconds;
           }
         });
-      }, 100);
+      }, 1000);
       setIntervalId(newIntervalId);
     }
   };
