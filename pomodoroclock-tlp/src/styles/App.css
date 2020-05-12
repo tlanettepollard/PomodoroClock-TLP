@@ -119,7 +119,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  /*width: 200px;*/
 }
 #session-label {
   font-family: var(--ft-family-heading);
@@ -127,17 +130,16 @@ body {
 }
 
 #session-length {
-  font-family: var(--ft-family-text);
-  font-size: 36px;
+  font-family: var(--ft-family-heading);
+  font-size: 30px;
   margin: 20px 0;
 }
 
 .session-btn {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100px;
-  margin-bottom: 10px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem;
 }
 
 .break-container {
