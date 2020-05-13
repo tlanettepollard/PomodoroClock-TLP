@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import Session from '../src/components/Session';
 import Break from '../src/components/Break';
-import '../src/styles/App.css';
+import './styles/App.css';
 import soundfile from './michigan_frog.wav';
 
 
@@ -10,7 +10,7 @@ const App = () => {
   const myAudio = useRef();
 
 
-  
+
 
   return  (
     <div className="app-container">

@@ -3,17 +3,17 @@ import React from 'react';
 const Session = props => {
     return (
         <div className="session-container">
-            <h3 id="session-label">Session Length</h3>
+            <h2 id="session-label">Session Length</h2>
 
             <div className="session-btn">
-                <button id="session-increment" onClick={props.incrementSession}>
-                    <i className="fa fa-plus-square fa-2x"/>
+                <button id="session-increment" className="session-ctrl-btn" onClick={props.incrementSessionLength}>
+                    <i className="fa fa-plus-square"/>
                 </button>
                 <h3 id="session-length">
-                    {props.sessionLength}
+                    {props.sessionLengthSeconds}
                 </h3>
-                <button id="session-decrement" onClick={props.decrementSession}>
-                    <i className="fa fa-minus-square fa-2x"/>
+                <button id="session-decrement" className="session-ctrl-btn" onClick={props.decrementSessionLength}>
+                    <i className="fa fa-minus-square"/>
                 </button>
             </div>
         </div>

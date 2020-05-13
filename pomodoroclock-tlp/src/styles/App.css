@@ -73,7 +73,7 @@ body {
 
 
 /* Timer */ 
-.timeleft-container {
+.timer-container {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -106,7 +106,7 @@ body {
 .settings-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid black;
   margin-top: 60px;
@@ -120,7 +120,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
-  width: 200px;
+  width: 300px;
 }
 #session-label {
   font-family: var(--ft-family-heading);
@@ -129,7 +129,7 @@ body {
 
  #session-length {
   font-family: var(--ft-family-heading);
-  font-size: 60px;
+  font-size: 30px;
   margin: 20px 0;
 }
 
@@ -146,7 +146,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
-  width: 200px;
+  width: 300px;
 }
 
 #break-label {
