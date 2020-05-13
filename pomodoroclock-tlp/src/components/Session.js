@@ -1,14 +1,14 @@
-import moment from "moment";
+//import moment from "moment";
 import React from "react";
  
 
 //DevTo AryanJ Tutorial for commented section
-const Session = ({
+/*const Session = ({
     sessionLengthSeconds,
     incrementSessionLength,
     decrementSessionLength
 }) => {
-    const sessionLengthMinutes = moment.duration(sessionLengthSeconds, 's').minutes();
+    const sessionLengthMinutes = moment.duration(sessionLengthSeconds, 's').asMinutes();
     
     return (
         <div className="session-container">
@@ -24,6 +24,32 @@ const Session = ({
             </div>
         </div>
     );
-};
+};*/
+const Session = props => {
+
+    return (
+        <div className="session-container">
+            <h3 id="session-label">Session</h3>
+
+            <div className="session-btn">
+                <button id="session-increment" className="session-ctrl-btn" onClick={props.incrementSessionLength}>
+                    <i className="fa fa-plus-square"/>
+                </button>
+
+                <h3 id="session-length">
+                    {props.sessionLengthMinutes}
+                </h3>
+
+                <button id="session-decrement" className="session-ctrl-btn" onClick={props.decrementSessionLength}>
+                    <i className="fa fa-minus-square"/>
+                </button>
+            </div>
+        </div>
+    )
+}
+
+
+
+
 
 export default Session; 

@@ -1,15 +1,14 @@
 //DevTo AryanJ Tutorial commented out sections
-import moment from 'moment';
+//import moment from 'moment';
 import React from 'react';
 
 
-
-const Break = ({
+/*const Break = ({
     breakLengthSeconds,
     incrementBreakLength,
     decrementBreakLength,
     }) => {
-    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").minutes();  
+    const breakLengthMinutes = moment.duration(breakLengthSeconds, "s").asMinutes();  
 
     return (
         <div className="break-container">
@@ -26,6 +25,28 @@ const Break = ({
             </div>
         </div>
     );
-};
+}; */
+
+const Break = props => {
+    return (
+        <div className="break-container">
+            <h3 id="break-label">Break Length</h3>
+
+            <div className="break-btn">
+                <button id="break-increment" onClick={props.incrementBreakLength} className="break-ctrl-btn">
+                    <i className="fa fa-plus-square"/>
+                </button>
+
+                <h3 id="break-length">
+                    {props.breakLengthMinutes}
+                </h3>
+
+                <button id="break-decrement" onClick={props.decrementBreakLength} className="break-ctrl-btn">
+                    <i className="fa fa-minus-square"/>
+                </button>
+            </div>
+        </div>
+    )
+}
 
 export default Break; 
