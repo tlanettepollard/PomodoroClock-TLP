@@ -176,11 +176,78 @@ const App = () => {
   }
 
   const incrementBreakLength = () => {
+    if (!timerRunning && breakLengthSeconds < 60) {
+      setBreakLength(breakLengthSeconds + 1)
+    }
+  }
+
+  const decrementBreakLength = () => {
     if (!timerRunning && breakLengthSeconds > 1) {
       setBreakLength(breakLengthSeconds - 1)
     }
   }
 
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+
+  useEffect(() => {
+    const handleSwitch = () => {
+      if (timerLabel === 'Session') {
+        setTimerLabel('Break');
+        setTimeLeft(breakLengthSeconds * 60);
+      } else if (timerLabel === 'Break') {
+        setTimerLabel('Session');
+        setTimeLeft(sessionLengthSeconds * 60);
+      }
+    }
+
+    let countdown = null;
+    if (timerRunning && timeLeft > 0) {
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+    } else if (timerRunning && timeLeft === 0) {
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+      myAudio.current.play();
+      handleSwitch();
+    } else {
+      clearInterval(countdown);
+    }
+    return () => clearInterval(countdown);
+  },
+  [timerRunning, timeLeft, timerLabel, breakLengthSeconds, sessionLengthSeconds, myAudio]);
+  
+  const handleStart = () => {
+    context.resume();
+    setTimerRunning(true);
+  }
+  const handleStop = () => {
+    setTimerRunning(false);
+  }
+
+  const handleReset = () => {
+    setSessionLength(25);
+    setBreakLength(5);
+    setTimeLeft(25 * 60);
+    setTimerLabel('Session');
+    setTimerRunning(false);
+    myAudio.current.pause();
+    myAudio.current.currentTime = 0;
+  }
+
+  return (
+    <div className="container">
+      <div className="header-container">
+        <h1 className="app-title">Rebel-Cow Pomodoro Clock</h1>
+      </div>
+
+      <div className="timeleft-container">
+        <TimeLeft />
+      </div>
+    </div>
+  )
 
 
 }

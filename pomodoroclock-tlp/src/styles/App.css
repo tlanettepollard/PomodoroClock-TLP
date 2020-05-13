@@ -86,7 +86,7 @@ body {
   border-radius: 25px;
 }
 
-.time-content {
+.time-container {
   display: flex;
   flex-direction: column;
 }
