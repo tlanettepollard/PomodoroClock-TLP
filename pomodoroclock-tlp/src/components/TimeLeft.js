@@ -10,18 +10,17 @@ import React from 'react';
 //momentDurationFormatSetup(moment);
 
 const TimeLeft = ({ 
-  handleResetBtnClick,
   handleStart,
   handleStop,
   handleReset,
   timerRunning,
-  //startStopButtonLabel, 
   minutes,
   seconds,
   myAudio,
   soundfile,
   timerLabel
  }) => {
+   
 
     //const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss', {trim: false});
 

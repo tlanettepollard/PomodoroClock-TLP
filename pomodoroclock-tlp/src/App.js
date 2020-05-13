@@ -244,8 +244,31 @@ const App = () => {
       </div>
 
       <div className="timeleft-container">
-        <TimeLeft />
+        <TimeLeft 
+        minutes={minutes}
+        seconds={seconds}
+        handleStart={handleStart}
+        handleStop={handleStop}
+        handleReset={handleReset}
+        soundfile={soundfile}
+        myAudio={myAudio}
+        />
       </div>
+
+      <div className="settings-container">
+        <Break
+        breakLengthSeconds={breakLengthSeconds}
+        incrementSessionLength={incrementBreakLength}
+        decrementBreakLength={decrementBreakLength}
+        />
+        <Session
+        sessionLengthSeconds={sessionLengthSeconds}
+        incrementSessionLength={incrementSessionLength}
+        decrementSessionLength={decrementSessionLength}
+        />
+      </div>
+
+
     </div>
   )
 
