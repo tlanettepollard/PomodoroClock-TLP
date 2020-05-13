@@ -41,7 +41,31 @@ const App = () => {
   let minutes = Math.floor(timeLeft / 60);
   let seconds = timeLeft % 60;
 
+  useEffect(() => {
+    const handleSwitch = () => {
+      if (timerLabel === 'Session') {
+        setTimerLabel('Break');
+        setTimeLeft(breakLengthSeconds * 60);
+      } else if (timerLabel === 'Break') {
+        setTimerLabel('Session');
+        setTimeLeft(sessionLengthSeconds * 60);
+      }
+    }
+    let countdown = null;
+    if (timerRunning && timeLeft > 0) {
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+      myAudio.current.play();
+      handleSwitch();
+    } else {
+      clearInterval(countdown);
+    }
+    return () => clearInterval(countdown);
+  }, 
+  [timerRunning, timeLeft, timerLabel, breakLengthSeconds, sessionLengthSeconds, myAudio]);
 
+  
 
 
 
@@ -66,7 +90,7 @@ const App = () => {
       </div>
 
     </div>
-)
+  )
 
 }
 
