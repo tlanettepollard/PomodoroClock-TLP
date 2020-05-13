@@ -65,9 +65,24 @@ const App = () => {
   }, 
   [timerRunning, timeLeft, timerLabel, breakLengthSeconds, sessionLengthSeconds, myAudio]);
 
-  
+  const handleStart = () => {
+    context.resume();
+    setTimerRunning(true);
+  }
 
+  const handleStop = () => {
+    setTimerRunning(false);
+  }
 
+  const handleReset = () => {
+    setSessionLength(25);
+    setBreakLength(5);
+    setTimeLeft(25 * 60);
+    setTimerLabel('Session');
+    setTimerRunning(false);
+    myAudio.current.pause();
+    myAudio.current.currentTime = 0;
+  }
 
 
 
@@ -78,6 +93,10 @@ const App = () => {
       </div>
 
       <div className="timer-container">
+        <h2 id="timer-label">{timerLabel}</h2>
+        <h3 id="time-left">
+          {minutes < 10 ? ("0" + minutes).slice(-2) : minutes}:{seconds < 10 ? ("0" + seconds).slice(-2) : seconds}
+        </h3>
       </div>
 
       <div className="settings-container">
