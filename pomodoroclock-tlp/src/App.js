@@ -101,16 +101,17 @@ const App = () => {
         <h3 id="time-left">
           {minutes < 10 ? ("0" + minutes).slice(-2) : minutes}:{seconds < 10 ? ("0" + seconds).slice(-2) : seconds}
         </h3>
-
-        <button id="start_stop" className="start-stop-btn" onClick={timerRunning ? handleStop : handleStart}>
-          <p>Start/Stop</p>
-          <i className="fa fa-play fa-2x"/>
-          <i className="fa fa-pause fa-2x"/>
-        </button>
-        <button id="reset" className="reset-btn" onClick={handleReset}>
-          <p>Reset</p>
-          <i className="fa fa-refresh fa-2x"/>
-        </button>
+        <div className="timer-btn">
+          <button id="start_stop" className="start-stop-btn" onClick={timerRunning ? handleStop : handleStart}>
+            <p>Start/Stop</p>
+            <i className="fa fa-play fa-2x"/>
+            <i className="fa fa-pause fa-2x"/>
+          </button>
+          <button id="reset" className="reset-btn" onClick={handleReset}>
+            <p>Reset</p>
+            <i className="fa fa-refresh fa-2x"/>
+          </button>
+        </div>
       </div>
 
       <div className="settings-container">
@@ -128,6 +129,11 @@ const App = () => {
 
       <div className="sound-container">
         <audio id="beep" ref={myAudio} src={soundfile} type="audio"></audio>
+      </div>
+      <div className="footer-container">
+        <div >
+          <p className="footer"> React Pomodoro Clock App created by {" "}<a href="https://github.com/TLanetteRose">{" "}<span> T.Lanette Pollard </span></a> &nbsp;FreeCodeCamp Front End Libraries Project </p>
+        </div>
       </div>
 
     </div>

@@ -35,6 +35,11 @@ body {
   background-color: lightgrey;
 }
 
+p {
+  font-family: var(--ft-family-text);
+  font-size: 24px;
+}
+
 
 .app-container {
   width: 100vw;
@@ -86,9 +91,11 @@ body {
   border-radius: 25px;
 }
 
-.time-container {
+.timer-btn{
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
 }
 
 #timer-label {
@@ -187,15 +194,19 @@ body {
 /* Footer */
 .footer {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   left: 0;
   bottom: 0; 
   width: 100%;
   margin-top: 50px;
-  height: 50px;
+  height: 100px;
+  font-size: var(--ft-family-text);
+  font-size: 16px;
   text-align: center;
 }
 
 h3 {
-  font-size: var(--ft-family-text);
-  font-size: 16px;
+  
 }
