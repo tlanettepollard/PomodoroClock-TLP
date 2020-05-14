@@ -170,6 +170,7 @@ body {
 .break-ctrl-btn,
 .session-ctrl-btn {
   font-size: 30px;
+  background-color: transparent;
   color: var(--color-sunkist-orange);
   
 }

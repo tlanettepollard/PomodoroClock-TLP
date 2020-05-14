@@ -1,8 +1,4 @@
-<audio id="beep" preload="auto" src="https://goo.gl/65cBl1" ref={this.audioBeep}></audio>
-<Sound setSound={this.setSound} sound={this.state.sound}/>
 
-
-Tutorial: https://dev.to/aryanjnyc/freecodecamp-pomodoro-clock-01-react-functional-components-and-local-state-3ngb
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
