@@ -97,11 +97,29 @@ const App = () => {
         <h3 id="time-left">
           {minutes < 10 ? ("0" + minutes).slice(-2) : minutes}:{seconds < 10 ? ("0" + seconds).slice(-2) : seconds}
         </h3>
+
+        <button id="start_stop" className="start-stop-btn" onClick={timerRunning ? handleStop : handleStart}>
+          <p>Start/Stop</p>
+          <i className="fa fa-play fa-2x"/>
+          <i className="fa fa-pause fa-2x"/>
+        </button>
+        <button id="reset" className="reset-btn" onClick={handleReset}>
+          <p>Reset</p>
+          <i className="fa fa-refresh fa-2x"/>
+        </button>
       </div>
 
       <div className="settings-container">
-        <Break />
-        <Session />
+        <Break 
+          breakLengthSeconds={breakLengthSeconds}
+          incrementBreakLength={incrementBreakLength}
+          decrementBreakLength={decrementBreakLength}
+        />
+        <Session 
+          sessionLengthSeconds={sessionLengthSeconds}
+          incrementSessionLength={incrementSessionLength}
+          decrementSessionLength={decrementSessionLength}
+        />
       </div>
 
       <div className="sound-container">

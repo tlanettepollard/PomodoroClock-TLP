@@ -129,7 +129,7 @@ body {
 
  #session-length {
   font-family: var(--ft-family-heading);
-  font-size: 30px;
+  font-size: 36px;
   margin: 20px 0;
 }
 
@@ -155,7 +155,7 @@ body {
 }
 
 #break-length {
-  font-family: var(--ft-family-text);
+  font-family: var(--ft-family-heading);
   font-size: 36px;
   margin: 20px 0;
 }
