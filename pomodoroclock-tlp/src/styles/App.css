@@ -33,7 +33,7 @@ html {
 body {
   font-family: inherit;
   background-image: url('../grey-370125_1280.png');
-  
+
   
 }
 
@@ -79,7 +79,6 @@ p {
 }
 
 
-
 /* Timer */ 
 .timer-container {
   display: flex;
@@ -113,8 +112,36 @@ p {
 #time-left {
   font-family: var(--ft-family-text);
   font-size: 80px;
-  margin-top: -20px;
+  margin-top: -40px;
   color: var(--color-white);
+}
+
+.start-stop-btn {
+  background-color: var(--color-sunkist-orange);
+  border-radius: 10px;
+  font-size: 12px;
+  width: 150px;
+  padding: 10px;
+  margin-top: -20px;
+}
+
+.start-stop-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.reset-btn {
+  background-color: var(--color-sunkist-orange);
+  border-radius: 10px;
+  font-size: 12px;
+  width: 150px;
+  padding: 10px;
+  margin-top: -20px;
+}
+
+.reset-title {
+  font-size: 20px;
+  font-weight: 700;
 }
 /* Settings Container */
 
@@ -124,6 +151,7 @@ p {
   justify-content: space-around;
   align-items: center;
   border: 1px solid black;
+  border-radius: 20px;
   background-color: var(--color-medium-blue-green);
   box-shadow: 5px 10px 8px var(--color-light-black);
   margin-top: 70px;

@@ -103,12 +103,12 @@ const App = () => {
         </h3>
         <div className="timer-btn">
           <button id="start_stop" className="start-stop-btn" onClick={timerRunning ? handleStop : handleStart}>
-            <p>Start/Stop</p>
+            <p className="start-stop-title">Start/Stop</p>
             <i className="fa fa-play fa-2x"/>
             <i className="fa fa-pause fa-2x"/>
           </button>
           <button id="reset" className="reset-btn" onClick={handleReset}>
-            <p>Reset</p>
+            <p className="reset-title">Reset</p>
             <i className="fa fa-refresh fa-2x"/>
           </button>
         </div>
