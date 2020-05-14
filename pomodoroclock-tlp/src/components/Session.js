@@ -7,13 +7,13 @@ const Session = props => {
 
             <div className="session-btn">
                 <button id="session-increment" className="session-ctrl-btn" onClick={props.incrementSessionLength}>
-                    <i className="fa fa-plus-square"/>
+                    <i className="fa fa-plus-square fa-1x"/>
                 </button>
                 <h3 id="session-length">
                     {props.sessionLengthSeconds}
                 </h3>
                 <button id="session-decrement" className="session-ctrl-btn" onClick={props.decrementSessionLength}>
-                    <i className="fa fa-minus-square"/>
+                    <i className="fa fa-minus-square fa-1x"/>
                 </button>
             </div>
         </div>
