@@ -89,6 +89,7 @@ p {
   height: 300px;
   width: 50%;
   margin-top: 60px;
+  padding-bottom: 20px;
   border: 1px solid black;
   background-color: var(--color-medium-blue-green);
   box-shadow: 5px 10px 8px var(--color-light-black);
@@ -118,7 +119,10 @@ p {
 
 .start-stop-btn {
   background-color: var(--color-sunkist-orange);
+  color: var(--color-black);
+  border: 1px solid var(--color-light-black);
   border-radius: 10px;
+  box-shadow: 5px 10px 8px var(--color-light-black);
   font-size: 12px;
   width: 150px;
   padding: 10px;
@@ -126,12 +130,16 @@ p {
 }
 
 .start-stop-title {
+  color: var(--color-light-black);
   font-size: 20px;
   font-weight: 700;
 }
 
 .reset-btn {
   background-color: var(--color-sunkist-orange);
+  color: var(--color-black);
+  box-shadow: 5px 10px 8px var(--color-light-black);
+  border: 1px solid var(--color-light-black);
   border-radius: 10px;
   font-size: 12px;
   width: 150px;
@@ -140,6 +148,7 @@ p {
 }
 
 .reset-title {
+  color: var(--color-light-black);
   font-size: 20px;
   font-weight: 700;
 }
@@ -178,7 +187,7 @@ p {
   font-family: var(--ft-family-text);
   font-size: 40px;
   margin: 20px 0;
-  color: var(--color-white);
+  color: var(--color-light-black);
 }
 
 .session-btn {
@@ -187,7 +196,9 @@ p {
   width: 100%;
   margin: 1rem;
   background-color: var(--color-sunkist-orange);
-  border-radius: 25px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px var(--color-light-black);
 }
 
 .break-container {
@@ -209,7 +220,7 @@ p {
   font-family: var(--ft-family-text);
   font-size: 40px;
   margin: 20px 0;
-  color: white;
+  color: var(--color-light-black);
 }
 
 .break-btn {
@@ -218,7 +229,9 @@ p {
   width: 100%;
   margin: 1rem;
   background-color: var(--color-sunkist-orange);
-  border-radius: 25px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px var(--color-light-black);
 }
 
 .break-ctrl-btn,
@@ -226,7 +239,7 @@ p {
   font-size: 30px;
   background-color: transparent;
   border: none;
-  color: white;
+  color: var(--color-black);
   
 }
 
