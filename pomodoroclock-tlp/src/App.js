@@ -51,8 +51,13 @@ const App = () => {
         setTimeLeft(sessionLengthSeconds * 60);
       }
     }
+
     let countdown = null;
     if (timerRunning && timeLeft > 0) {
+      countdown = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+    } else if (timerRunning && timeLeft === 0) {
       countdown = setInterval(() => {
         setTimeLeft(timeLeft - 1);
       }, 1000);
