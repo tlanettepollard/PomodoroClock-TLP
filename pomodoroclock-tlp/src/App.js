@@ -132,7 +132,7 @@ const App = () => {
       </div>
       <div className="footer-container">
         <div >
-          <p className="footer"> React Pomodoro Clock App created by {" "}<a href="https://github.com/TLanetteRose">{" "}<span> T.Lanette Pollard </span></a> &nbsp;FreeCodeCamp Front End Libraries Project </p>
+          <p className="footer"> React Pomodoro Clock App created by &nbsp;{" "}<a href="https://github.com/TLanetteRose">{" "}<span> T.Lanette Pollard </span></a> &nbsp;FreeCodeCamp Front End Libraries Project </p>
         </div>
       </div>
 
